@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;700&display=swap");
 
+/* add span tags in the hour mins and secs for the time display */
+
 /* resets */
 * {
   margin: 0;
@@ -40,5 +42,21 @@ ul {
 .container {
   max-width: 1180px;
   margin-inline: auto; /* this will center the container*/
-  padding-inline: var(--padding-inline-section);
+  /* padding-inline: var(--padding-inline-section); */
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.clock-emoji {
+  height: 30vh;
+  width: 30vw;
+  justify-content: center;
+}
+.clock-emoji img {
+  height: 100%;
+  width: auto;
 }
