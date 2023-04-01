@@ -9,12 +9,15 @@
   </head>
   <body>
     <div class="container flex">
+      <!-- alarm image -->
       <div class="clock-emoji flex">
-        <img src="./assets/clock-one.jpg" alt="" />
+        <img src="./assets/mint_clock.png" alt="" />
       </div>
+
       <!-- h1 tag displaying the time right now -->
       <h1>00:00:00</h1>
 
+      <!-- input to get alarm time -->
       <form class="alarm-form">
         <div class="alarm-input">
           <input
@@ -42,12 +45,21 @@
             required
           />
         </div>
-        <div class="alarm-buttons">
+        <div class="alarm-buttons flex">
           <button type="submit" class="set-alarm">Set Alarm</button>
           <button type="submit" class="delete-alarm">Stop Alarm</button>
         </div>
       </form>
+
+      <!-- displaying upcoming alarms -->
+      <h3>Your Upcoming Alarms</h3>
+      <div class="upcoming-alarms">
+        <ul class="upcoming-alarms-list">
+          <!-- add list items here using javascript -->
+        </ul>
+      </div>
     </div>
+
     <script
       src="https://kit.fontawesome.com/5e6e3315b0.js"
       crossorigin="anonymous"

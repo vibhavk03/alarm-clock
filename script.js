@@ -3,6 +3,7 @@ const timeDisplay = document.querySelector("h1");
 
 // input form for alarm
 const alarmForm = document.querySelector(".alarm-form");
+const upcomingAlarmList = document.querySelector(".upcoming-alarms-list");
 
 // to store the alarms
 let alarmList = [];
@@ -28,6 +29,32 @@ const getTwoDigits = (time) => {
   return time;
 };
 
+// delete alarm li from page
+upcomingAlarmList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("deleteAlarm")) {
+    e.target.parentElement.remove();
+  }
+});
+
+// remove alarm from alarm list
+const removeFromAlarmList = (newAlarm) => {
+  alarmList = alarmList.filter((alarm) => {
+    return alarm !== newAlarm;
+  });
+};
+
+// add alarm to list
+const addAlarmToList = (newAlarm) => {
+  console.log(this.value);
+  const newAlarmString = `${newAlarm}`;
+  const newAlarmHTML = `
+  <li class="newAlarm-list-item-${newAlarm}">
+    <span>${newAlarmString}</span>
+    <button class="deleteAlarm" onclick = "removeFromAlarmList(this.value)" value=${newAlarm}>Delete Alarm</button>
+  </li>`;
+  upcomingAlarmList.innerHTML += newAlarmHTML;
+};
+
 // add alarm to alarm list
 alarmForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -35,12 +62,15 @@ alarmForm.addEventListener("submit", (event) => {
   let h = getTwoDigits(alarmForm.hrs.value);
   let m = getTwoDigits(alarmForm.min.value);
   let s = getTwoDigits(alarmForm.sec.value);
-  console.log(h, m, s);
   const newAlarm = `${h}:${m}:${s}`;
+
+  console.log("setting alarm for ", newAlarm);
+
   if (alarmList.includes(newAlarm)) {
     alert("Alarm already included!");
   } else {
     alarmList.push(newAlarm);
+    addAlarmToList(newAlarm);
     alarmForm.reset();
   }
 });
