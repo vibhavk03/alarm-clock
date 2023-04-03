@@ -1,3 +1,4 @@
+const alarmTone = new Audio("./assets/alarm_tone.m4a");
 // h1 tag displaying time
 const timeDisplay = document.querySelector("h1");
 
@@ -8,6 +9,18 @@ const upcomingAlarmList = document.querySelector(".upcoming-alarms-list");
 // to store the alarms
 let alarmList = [];
 
+// play the alarm
+alarmTone.loop = true;
+const playAlarm = function (timeNow) {
+  alarmTone.play();
+  alert(`It is ${timeNow}!`);
+};
+
+// stop the alarm
+const stopAlarm = function () {
+  alarmTone.pause();
+};
+
 // update the time in h1 tag
 const updateTime = function () {
   const date = new Date();
@@ -17,7 +30,7 @@ const updateTime = function () {
   const timeNow = `${hr}:${mins}:${secs}`;
   timeDisplay.innerText = timeNow;
   if (alarmList.includes(timeNow)) {
-    alert("Alarm is ringing!");
+    playAlarm(timeNow);
   }
 };
 
