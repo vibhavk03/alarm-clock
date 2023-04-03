@@ -8,59 +8,73 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container flex">
-      <!-- alarm image -->
-      <div class="clock-emoji flex">
-        <img src="./assets/mint_clock.png" alt="" />
-      </div>
-
-      <!-- h1 tag displaying the time right now -->
-      <h1>00:00:00</h1>
-
-      <!-- input to get alarm time -->
-      <form class="alarm-form">
-        <div class="alarm-input">
-          <input
-            type="number"
-            name="hrs"
-            placeholder="HH"
-            max="23"
-            min="00"
-            required
-          />
-          <input
-            type="number"
-            name="min"
-            placeholder="MM"
-            max="59"
-            min="00"
-            required
-          />
-          <input
-            type="number"
-            name="sec"
-            placeholder="SS"
-            max="59"
-            min="00"
-            required
-          />
+    <div class="wrapper flex">
+      <div class="container flex">
+        <!-- alarm image -->
+        <div class="clock-emoji flex">
+          <img src="./assets/mint_clock.png" alt="" />
         </div>
-        <div class="alarm-buttons flex">
-          <button type="submit" class="set-alarm">Set Alarm</button>
-        </div>
-      </form>
-      <div class="stop-alarm-btn-div">
-        <button type="submit" onclick="stopAlarm()" class="delete-alarm">
-          Stop Alarm
-        </button>
-      </div>
 
-      <!-- displaying upcoming alarms -->
-      <h3>Your Upcoming Alarms</h3>
-      <div class="upcoming-alarms">
-        <ul class="upcoming-alarms-list">
-          <!-- add list items here using javascript -->
-        </ul>
+        <!-- h1 tag displaying the time right now -->
+        <!-- <h1>00:00:00</h1> -->
+        <h1 id="time-display">
+          <span id="hrss-display">00</span
+          ><!--
+          --><span id="collen">:</span
+          ><!--
+          --><span id="mins-display">00</span
+          ><!--
+          --><span id="collen">:</span
+          ><!--
+          --><span id="secs-display">00</span>
+        </h1>
+
+        <!-- input to get alarm time -->
+        <form class="alarm-form">
+          <div class="alarm-input">
+            <input
+              type="number"
+              name="hrs"
+              placeholder="HH"
+              max="23"
+              min="00"
+              required
+            />
+            <input
+              type="number"
+              name="min"
+              placeholder="MM"
+              max="59"
+              min="00"
+              required
+            />
+            <input
+              type="number"
+              name="sec"
+              placeholder="SS"
+              max="59"
+              min="00"
+              required
+            />
+          </div>
+          <div class="alarm-buttons flex">
+            <button type="submit" class="set-alarm">Set Alarm</button>
+          </div>
+        </form>
+        <!-- stop alarm button -->
+        <div class="stop-alarm-btn-div">
+          <button type="submit" onclick="stopAlarm()" class="delete-alarm">
+            Stop Alarm
+          </button>
+        </div>
+
+        <!-- displaying upcoming alarms -->
+        <h3>Your Upcoming Alarms</h3>
+        <div class="upcoming-alarms">
+          <ul class="upcoming-alarms-list">
+            <!-- add list items here using javascript -->
+          </ul>
+        </div>
       </div>
     </div>
 

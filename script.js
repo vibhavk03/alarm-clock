@@ -1,6 +1,8 @@
 const alarmTone = new Audio("./assets/alarm_tone.m4a");
 // h1 tag displaying time
-const timeDisplay = document.querySelector("h1");
+const hrssDisplay = document.getElementById("hrss-display");
+const minsDisplay = document.getElementById("mins-display");
+const secsDisplay = document.getElementById("secs-display");
 
 // input form for alarm
 const alarmForm = document.querySelector(".alarm-form");
@@ -24,11 +26,13 @@ const stopAlarm = function () {
 // update the time in h1 tag
 const updateTime = function () {
   const date = new Date();
-  const hr = getTwoDigits(date.getHours());
+  const hrss = getTwoDigits(date.getHours());
   const mins = getTwoDigits(date.getMinutes());
   const secs = getTwoDigits(date.getSeconds());
-  const timeNow = `${hr}:${mins}:${secs}`;
-  timeDisplay.innerText = timeNow;
+  hrssDisplay.innerText = hrss;
+  minsDisplay.innerText = mins;
+  secsDisplay.innerText = secs;
+  const timeNow = `${hrss}:${mins}:${secs}`;
   if (alarmList.includes(timeNow)) {
     playAlarm(timeNow);
   }

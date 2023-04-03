@@ -20,6 +20,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: var(--primary-text-color);
+  background-color: bisque;
 }
 
 p {
@@ -43,11 +44,21 @@ h3 {
 }
 
 /* utility classes */
+.wrapper {
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  background-color: #3edeae;
+}
+
 .container {
-  max-width: 1180px;
-  margin-inline: auto; /* this will center the container*/
+  max-width: 400px;
+  /* margin-inline: auto; this will center the container */
   /* padding-inline: var(--padding-inline-section); */
   flex-direction: column;
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
 }
 
 .flex {
@@ -63,6 +74,36 @@ h3 {
 .clock-emoji img {
   height: 50%;
   width: auto;
+}
+
+/* #time-display {
+  text-align: center;
+  width: 250px;
+} */
+
+#time-display {
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+#time-display,
+span {
+  display: inline-block;
+}
+
+#hrss-display,
+#secs-display,
+#mins-display {
+  /* padding: 5px; */
+  width: 55px;
+  text-align: center;
+}
+
+#alarm-input,
+input {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .alarm-buttons {
