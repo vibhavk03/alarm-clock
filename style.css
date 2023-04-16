@@ -59,6 +59,7 @@ button:hover {
 
 /* utility classes */
 .wrapper {
+  min-width: 410px;
   justify-content: center;
   align-content: center;
   height: 100vh;
@@ -66,7 +67,8 @@ button:hover {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 410px;
+  min-width: 410px;
   /* margin-inline: auto; this will center the container */
   /* padding-inline: var(--padding-inline-section); */
   flex-direction: column;
