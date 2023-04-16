@@ -20,11 +20,11 @@
         <h1 id="time-display">
           <span id="hrss-display">00</span
           ><!--
-          --><span id="collen">:</span
+          --><span>:</span
           ><!--
           --><span id="mins-display">00</span
           ><!--
-          --><span id="collen">:</span
+          --><span>:</span
           ><!--
           --><span id="secs-display">00</span>
         </h1>
@@ -58,19 +58,17 @@
             />
           </div>
           <div class="set-alarm-button-div flex">
-            <button type="submit" class="set-alarm">Set Alarm</button>
+            <button type="submit">Set Alarm</button>
           </div>
         </form>
         <!-- stop alarm button -->
         <div class="stop-alarm-button-div">
-          <button type="submit" onclick="stopAlarm()" class="stop-alarm-button">
-            Stop Alarm
-          </button>
+          <button type="submit" onclick="stopAlarm()">Stop Alarm</button>
         </div>
 
         <!-- displaying upcoming alarms -->
         <h3>Your Upcoming Alarms</h3>
-        <div class="upcoming-alarms">
+        <div>
           <ul class="upcoming-alarms-list">
             <!-- add list items here using javascript -->
           </ul>

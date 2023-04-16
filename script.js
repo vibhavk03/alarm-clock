@@ -1,6 +1,8 @@
 // TODO - give maximum number of alarms
 
 const alarmTone = new Audio("./assets/alarm_tone.m4a");
+alarmTone.loop = true;
+
 // h1 tag displaying time
 const hrssDisplay = document.getElementById("hrss-display");
 const minsDisplay = document.getElementById("mins-display");
@@ -14,7 +16,6 @@ const upcomingAlarmList = document.querySelector(".upcoming-alarms-list");
 let alarmList = [];
 
 // play the alarm
-alarmTone.loop = true;
 const playAlarm = function (timeNow) {
   alarmTone.play();
   setTimeout(() => {
