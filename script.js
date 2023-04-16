@@ -1,3 +1,5 @@
+// TODO - give maximum number of alarms
+
 const alarmTone = new Audio("./assets/alarm_tone.m4a");
 // h1 tag displaying time
 const hrssDisplay = document.getElementById("hrss-display");
@@ -62,7 +64,6 @@ const removeFromAlarmList = (newAlarm) => {
 
 // add alarm to list
 const addAlarmToList = (newAlarm) => {
-  console.log(this.value);
   const newAlarmString = `${newAlarm}`;
   const newAlarmHTML = `
   <li class="newAlarm-list-item-${newAlarm}">
@@ -75,13 +76,10 @@ const addAlarmToList = (newAlarm) => {
 // add alarm to alarm list
 alarmForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  // console.log("here", alarmForm);
   let h = getTwoDigits(alarmForm.hrs.value);
   let m = getTwoDigits(alarmForm.min.value);
   let s = getTwoDigits(alarmForm.sec.value);
   const newAlarm = `${h}:${m}:${s}`;
-
-  console.log("setting alarm for ", newAlarm);
 
   if (alarmList.includes(newAlarm)) {
     alert("Alarm already included!");
