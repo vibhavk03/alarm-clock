@@ -17,7 +17,9 @@ let alarmList = [];
 alarmTone.loop = true;
 const playAlarm = function (timeNow) {
   alarmTone.play();
-  alert(`It is ${timeNow}!`);
+  setTimeout(() => {
+    alert(`It is ${timeNow}!`);
+  }, 1000);
 };
 
 // stop the alarm
@@ -50,7 +52,7 @@ const getTwoDigits = (time) => {
 
 // delete alarm li from page
 upcomingAlarmList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("deleteAlarm")) {
+  if (e.target.classList.contains("delete-alarm-button")) {
     e.target.parentElement.remove();
   }
 });
@@ -66,9 +68,9 @@ const removeFromAlarmList = (newAlarm) => {
 const addAlarmToList = (newAlarm) => {
   const newAlarmString = `${newAlarm}`;
   const newAlarmHTML = `
-  <li class="newAlarm-list-item-${newAlarm}">
+  <li class="newAlarm-list-item flex">
     <span>${newAlarmString}</span>
-    <button class="deleteAlarm" onclick = "removeFromAlarmList(this.value)" value=${newAlarm}>Delete Alarm</button>
+    <button class="delete-alarm-button" onclick = "removeFromAlarmList(this.value)" value=${newAlarm}>Delete Alarm</button>
   </li>`;
   upcomingAlarmList.innerHTML += newAlarmHTML;
 };
@@ -84,6 +86,9 @@ alarmForm.addEventListener("submit", (event) => {
   if (alarmList.includes(newAlarm)) {
     alert("Alarm already included!");
   } else {
+    // if (alarmList.length === 6) {
+    //   alert("Please delete existing alarms to add new ones");
+    // }
     alarmList.push(newAlarm);
     addAlarmToList(newAlarm);
     alarmForm.reset();

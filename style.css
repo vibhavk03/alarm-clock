@@ -20,7 +20,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: var(--primary-text-color);
-  background-color: bisque;
+  background-color: #16b988;
 }
 
 p {
@@ -40,7 +40,21 @@ ul {
 }
 
 h3 {
-  margin-top: 25px;
+  margin: 15px 0px;
+}
+
+button {
+  width: 150px;
+  background-color: #16b988;
+  border-radius: 6px;
+  font-weight: 700;
+  color: white !important;
+  padding: 12px 24px;
+  /* box-shadow: 0 0 2px var(--secondary-text-color); */
+  transition: 0.2s ease-out;
+}
+button:hover {
+  background-color: #12906a;
 }
 
 /* utility classes */
@@ -48,7 +62,7 @@ h3 {
   justify-content: center;
   align-content: center;
   height: 100vh;
-  background-color: #3edeae;
+  background-color: #16b988;
 }
 
 .container {
@@ -106,6 +120,23 @@ input {
   border-radius: 5px;
 }
 
-.alarm-buttons {
+.set-alarm-button-div {
+  margin-top: 5px;
   flex-direction: column;
+}
+
+.stop-alarm-button-div {
+  margin-top: 10px;
+}
+
+.newAlarm-list-item {
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+.newAlarm-list-item > span {
+  margin-right: 5px;
+}
+
+.delete-alarm-button {
+  padding: 8px 15px;
 }
