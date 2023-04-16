@@ -91,6 +91,7 @@ input {
   padding: 5px;
   border: 1px solid black;
   border-radius: 5px;
+  max-width: 70px;
 }
 
 .set-alarm-button-div {
