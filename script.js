@@ -1,5 +1,3 @@
-// TODO - give maximum number of alarms
-
 const alarmTone = new Audio("./assets/alarm_tone.m4a");
 alarmTone.loop = true;
 
@@ -87,12 +85,13 @@ alarmForm.addEventListener("submit", (event) => {
   if (alarmList.includes(newAlarm)) {
     alert("Alarm already included!");
   } else {
-    // if (alarmList.length === 6) {
-    //   alert("Please delete existing alarms to add new ones");
-    // }
-    alarmList.push(newAlarm);
-    addAlarmToList(newAlarm);
-    alarmForm.reset();
+    if (alarmList.length === 8) {
+      alert("Please delete existing alarms to add new ones");
+    } else {
+      alarmList.push(newAlarm);
+      addAlarmToList(newAlarm);
+      alarmForm.reset();
+    }
   }
 });
 
