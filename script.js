@@ -57,7 +57,7 @@ upcomingAlarmList.addEventListener("click", (e) => {
 });
 
 // remove alarm from alarm list
-const removeFromAlarmList = (newAlarm) => {
+const filterFromAlarmList = (newAlarm) => {
   alarmList = alarmList.filter((alarm) => {
     return alarm !== newAlarm;
   });
@@ -69,7 +69,7 @@ const addAlarmToList = (newAlarm) => {
   const newAlarmHTML = `
   <li class="newAlarm-list-item flex">
     <span>${newAlarmString}</span>
-    <button class="delete-alarm-button" onclick = "removeFromAlarmList(this.value)" value=${newAlarm}>Delete Alarm</button>
+    <button class="delete-alarm-button" onclick = "filterFromAlarmList(this.value)" value=${newAlarm}>Delete Alarm</button>
   </li>`;
   upcomingAlarmList.innerHTML += newAlarmHTML;
 };
